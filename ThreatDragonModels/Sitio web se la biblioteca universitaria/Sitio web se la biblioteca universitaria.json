@@ -31,24 +31,38 @@
                 "text": "Usuarios"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
-            "id": "98ddee8e-1529-4111-8c5d-8ab4aa1e5b66",
             "zIndex": 1,
+            "id": "98ddee8e-1529-4111-8c5d-8ab4aa1e5b66",
             "data": {
               "type": "tm.Actor",
               "name": "Usuarios",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "ad29c282-823e-45ef-9d9e-305f10c40ec5",
+                  "title": "Suplantación de identidad",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Spoofing",
+                  "description": "Acción de amenaza destinada a acceder y utilizar las credenciales de otro usuario, como el nombre de usuario y la contraseña.",
+                  "mitigation": "1. Autenticación adecuada\n2. Proteger datos secretos\n3. No almacenar secretos",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": "5"
+                }
+              ]
             }
           },
           {
@@ -65,24 +79,38 @@
                 "text": "Bibliotecarios"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
-            "id": "4c3dbf91-fc76-4d3c-8c32-a0b01509e474",
             "zIndex": 3,
+            "id": "4c3dbf91-fc76-4d3c-8c32-a0b01509e474",
             "data": {
               "type": "tm.Actor",
               "name": "Bibliotecarios",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "bc8e6bf5-0ca9-49d3-a362-2946f9831749",
+                  "title": "Suplantación de identidad",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Spoofing",
+                  "description": "Acción de amenaza destinada a acceder y utilizar las credenciales de otro usuario, como el nombre de usuario y la contraseña.",
+                  "mitigation": "1. Autenticación\nadecuada\n2. Proteger datos secretos\n3. No almacenar secretos",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": "5"
+                }
+              ]
             }
           },
           {
@@ -99,6 +127,9 @@
               "hasOpenThreats": false
             },
             "id": "6503900b-4b36-465e-9125-20c9acb08be3",
+            "labels": [
+              "Usuario/Web\nserver límite"
+            ],
             "source": {
               "x": 70,
               "y": 40
@@ -120,9 +151,6 @@
                 "x": 380,
                 "y": 130
               }
-            ],
-            "labels": [
-              "Usuario/Web\nserver límite"
             ]
           },
           {
@@ -172,15 +200,15 @@
               ]
             },
             "id": "eddc5ba9-f06b-429c-a091-b50b1bad9432",
+            "labels": [
+              "Web Request"
+            ],
             "source": {
               "cell": "98ddee8e-1529-4111-8c5d-8ab4aa1e5b66"
             },
             "target": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
-            },
-            "labels": [
-              "Web Request"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -229,6 +257,9 @@
               ]
             },
             "id": "1a35514e-2fff-4784-99ec-62be905bf6d5",
+            "labels": [
+              "Web Response"
+            ],
             "source": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
             },
@@ -240,9 +271,6 @@
                 "x": 110,
                 "y": 220
               }
-            ],
-            "labels": [
-              "Web Response"
             ]
           },
           {
@@ -292,15 +320,15 @@
               ]
             },
             "id": "b5aba5d8-de72-4280-af89-9aa5538c28eb",
+            "labels": [
+              "Web Request"
+            ],
             "source": {
               "cell": "4c3dbf91-fc76-4d3c-8c32-a0b01509e474"
             },
             "target": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
             },
-            "labels": [
-              "Web Request"
-            ],
             "vertices": [
               {
                 "x": 340,
@@ -355,6 +383,9 @@
               ]
             },
             "id": "eef64a31-b4a4-4851-a482-8386bba4415c",
+            "labels": [
+              "Web Request"
+            ],
             "source": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
             },
@@ -366,9 +397,6 @@
                 "x": 460,
                 "y": 200
               }
-            ],
-            "labels": [
-              "Web Request"
             ]
           },
           {
@@ -417,6 +445,9 @@
               ]
             },
             "id": "585a5684-037f-476f-8c2e-1d30c9724f7e",
+            "labels": [
+              "Resultados\nweb App Query"
+            ],
             "source": {
               "cell": "e84fe5a9-e4f5-4c5e-a906-cdc2fd3670fe"
             },
@@ -428,9 +459,6 @@
                 "x": 590,
                 "y": 270
               }
-            ],
-            "labels": [
-              "Resultados\nweb App Query"
             ]
           },
           {
@@ -447,6 +475,9 @@
               "hasOpenThreats": false
             },
             "id": "782d13ef-cd1d-4991-a3f1-dde934400743",
+            "labels": [
+              "Límite\nWeb server/Db"
+            ],
             "source": {
               "x": 630,
               "y": 500
@@ -460,9 +491,6 @@
                 "x": 580,
                 "y": 360
               }
-            ],
-            "labels": [
-              "Límite\nWeb server/Db"
             ]
           },
           {
@@ -497,15 +525,15 @@
               "threats": []
             },
             "id": "02de0fe7-5802-4a12-b1c9-b6fc989d4622",
+            "labels": [
+              "Queries"
+            ],
             "source": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
             },
             "target": {
               "cell": "e84fe5a9-e4f5-4c5e-a906-cdc2fd3670fe"
             },
-            "labels": [
-              "Queries"
-            ],
             "vertices": [
               {
                 "x": 510,
@@ -545,15 +573,15 @@
               "threats": []
             },
             "id": "fabbecd2-7618-42cd-9fdd-bfbb1cbd0b96",
+            "labels": [
+              "Páginas"
+            ],
             "source": {
               "cell": "3c895c17-8e3f-44dd-8a53-39e898a690f6"
             },
             "target": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
-            },
-            "labels": [
-              "Páginas"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -587,15 +615,15 @@
               "threats": []
             },
             "id": "9c2044d1-0620-41f4-a0d0-daaac4bc4123",
+            "labels": [
+              "Lee web\napp config"
+            ],
             "source": {
               "cell": "e446ed21-5617-4c60-be85-0d375d56ab8a"
             },
             "target": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
-            },
-            "labels": [
-              "Lee web\napp config"
-            ]
+            }
           },
           {
             "position": {
@@ -618,8 +646,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a",
             "zIndex": 11,
+            "id": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a",
             "data": {
               "type": "tm.Process",
               "name": "Sitio web\nbiblioteca",
@@ -674,8 +702,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "3c895c17-8e3f-44dd-8a53-39e898a690f6",
             "zIndex": 12,
+            "id": "3c895c17-8e3f-44dd-8a53-39e898a690f6",
             "data": {
               "type": "tm.Store",
               "name": "Páginas web\nen disco",
@@ -731,8 +759,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "e446ed21-5617-4c60-be85-0d375d56ab8a",
             "zIndex": 13,
+            "id": "e446ed21-5617-4c60-be85-0d375d56ab8a",
             "data": {
               "type": "tm.Store",
               "name": "Web Application Config",
@@ -788,8 +816,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "e84fe5a9-e4f5-4c5e-a906-cdc2fd3670fe",
             "zIndex": 14,
+            "id": "e84fe5a9-e4f5-4c5e-a906-cdc2fd3670fe",
             "data": {
               "type": "tm.Store",
               "name": "Base de datos",
@@ -1610,6 +1638,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Leonardo Criollo Ramírez",
-    "threatTop": 23
+    "threatTop": 25
   }
 }
