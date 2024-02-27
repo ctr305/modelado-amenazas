@@ -357,7 +357,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Web Request",
+              "name": "Web Response",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -384,7 +384,7 @@
             },
             "id": "eef64a31-b4a4-4851-a482-8386bba4415c",
             "labels": [
-              "Web Request"
+              "Web Response"
             ],
             "source": {
               "cell": "3f1ca759-6610-4c43-ab5d-5da5ba65ad8a"
@@ -522,7 +522,21 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "84c3c3d2-8a10-4527-a266-3d31df5d4629",
+                  "title": "Ataque Man in the middle",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Un atacante podría interceptar las consultas de la base de datos en tránsito y obtener información confidencial, como credenciales de la base de datos, parámetros de consulta o resultados de la\nconsulta (es poco probable ya que el flujo de datos se realiza a través de una red privada).",
+                  "mitigation": "Aplicar una conexión cifrada en el servidor de base de datos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": "11"
+                }
+              ]
             },
             "id": "02de0fe7-5802-4a12-b1c9-b6fc989d4622",
             "labels": [
@@ -690,13 +704,11 @@
                 "text": "Páginas web\nen disco"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -710,7 +722,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
@@ -720,7 +732,7 @@
                 {
                   "id": "274b664b-0fb3-4daf-a341-52bfd2524c46",
                   "title": "Modificación sin autorización",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "High",
                   "type": "Tampering",
                   "description": "Un atacante podría modificar las páginas web sin autorización.",
@@ -834,7 +846,7 @@
                 {
                   "id": "95822421-98d3-44c1-9f00-6f57c026ac5c",
                   "title": "Acceso no autorizado",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Un atacante podría enviar una consulta a la BD.",
@@ -1638,6 +1650,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Leonardo Criollo Ramírez",
-    "threatTop": 25
+    "threatTop": 26
   }
 }
